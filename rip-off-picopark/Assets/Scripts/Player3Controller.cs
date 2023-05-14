@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 
-public class Player1Controller : MonoBehaviour
+public class Player3Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject floor;   
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -25,21 +24,17 @@ public class Player1Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Keypad8))
         {
             this.jump.Execute(this.gameObject);
-            // Case for disabling more than one jump.
         }
-        if(Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.Keypad6))
         {
             this.right.Execute(this.gameObject);
         }
-        if(Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Keypad4))
         {
             this.left.Execute(this.gameObject);
         }
-
-        var xPos = this.gameObject.transform.position.x;
-        Debug.Log(xPos);
     }
 }
