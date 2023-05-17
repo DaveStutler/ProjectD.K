@@ -15,7 +15,7 @@ namespace Player
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             if (rigidBody != null)
             {
-                rigidBody.velocity = new Vector2(rigidBody.velocity.y, this.speed);
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, this.speed);
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
         }

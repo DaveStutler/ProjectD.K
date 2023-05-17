@@ -9,7 +9,7 @@ namespace Player
     public class MoveCharacterLeft : ScriptableObject, IPlayerController
     {
         private float speed = 5.0f;
-       // private float timePassed = 0;
+        // private float timePassed = 0;
 
         public void Execute(GameObject gameObject)
         {
