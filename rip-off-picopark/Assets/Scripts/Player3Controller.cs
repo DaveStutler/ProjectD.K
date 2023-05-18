@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 
-public class Player1Controller : MonoBehaviour
+public class Player3Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject floor;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -18,6 +17,8 @@ public class Player1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //this.gameObject.AddComponent<CaptainMotivateCommand>();
+        // this.fire1 = gameObject.AddComponent<CaptainMotivateCommand>();
         this.jump = ScriptableObject.CreateInstance<MoveCharacterJump>();
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
@@ -27,37 +28,34 @@ public class Player1Controller : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if (Input.GetKeyUp(KeyCode.D))
+    {
+        if (Input.GetKeyUp(KeyCode.Keypad6))
         {
             this.rightPressed = false;
             // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.Keypad4))
         {
             this.leftPressed = false;
             // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
-        if (Input.GetKeyDown(KeyCode.W) && this.canJump)
+        if (Input.GetKeyDown(KeyCode.Keypad8) && this.canJump)
         {
             this.jump.Execute(this.gameObject);
-            // Since the person has jumped they are no longer in contact with the floor
-            // so they will no longer be able to jump until they gain contact again.
             this.canJump = false;
         }
-        if (Input.GetKeyDown(KeyCode.D) || this.rightPressed)
+        if (Input.GetKeyDown(KeyCode.Keypad6) || this.rightPressed)
         {
             this.right.Execute(this.gameObject);
             this.rightPressed = true;
         }
-        if (Input.GetKeyDown(KeyCode.A) || this.leftPressed)
+        if (Input.GetKeyDown(KeyCode.Keypad4) || this.leftPressed)
         {
             this.left.Execute(this.gameObject);
-            this.leftPressed = true;
+            this.leftPressed =true;
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
