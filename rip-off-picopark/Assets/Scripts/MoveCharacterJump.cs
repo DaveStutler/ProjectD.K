@@ -8,7 +8,7 @@ namespace Player
 {
     public class MoveCharacterJump : ScriptableObject, IPlayerController
     {
-        private float speed = 5.0f;
+        private float speed = 7.0f;
 
         public void Execute(GameObject gameObject)
         {

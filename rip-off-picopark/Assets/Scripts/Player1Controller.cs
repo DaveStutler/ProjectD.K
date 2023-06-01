@@ -5,7 +5,6 @@ using Player;
 
 public class Player1Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject floor;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -16,7 +15,6 @@ public class Player1Controller : MonoBehaviour
     private bool leftPressed = false;
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         this.jump = ScriptableObject.CreateInstance<MoveCharacterJump>();
@@ -27,7 +25,6 @@ public class Player1Controller : MonoBehaviour
         this.animator = this.gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {   
         if (Input.GetKeyUp(KeyCode.D))
@@ -45,8 +42,6 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && this.canJump)
         {
             this.jump.Execute(this.gameObject);
-            // Since the person has jumped they are no longer in contact with the floor
-            // so they will no longer be able to jump until they gain contact again.
             this.canJump = false;
             this.animator.SetBool("isJumping", true); // set the animator to jump
         }
@@ -66,5 +61,13 @@ public class Player1Controller : MonoBehaviour
         }
         this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
     }
-
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
+        {
+            this.canJump = true;
+            this.animator.SetBool("isJumping", false);
+        }
+    }
 }
