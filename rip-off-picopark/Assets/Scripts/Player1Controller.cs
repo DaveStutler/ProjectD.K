@@ -14,6 +14,8 @@ public class Player1Controller : MonoBehaviour
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
+    private bool canDoubleJump = false;
+    private int jumpCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,7 @@ public class Player1Controller : MonoBehaviour
         this.jump = ScriptableObject.CreateInstance<MoveCharacterJump>();
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
-        this.special = ScriptableObject.CreateInstance<MoveCharacterLeft>();
+        this.special = ScriptableObject.CreateInstance<AbilityDoubleJump>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
     }
 
@@ -40,12 +42,19 @@ public class Player1Controller : MonoBehaviour
             // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
-        if (Input.GetKeyDown(KeyCode.W) && this.canJump)
+        if (Input.GetKeyDown(KeyCode.W) && this.canJump && jumpCount < 2)
         {
-            this.jump.Execute(this.gameObject);
-            // Since the person has jumped they are no longer in contact with the floor
-            // so they will no longer be able to jump until they gain contact again.
-            this.canJump = false;
+            if (!canDoubleJump)
+            {
+                this.jump.Execute(this.gameObject);
+                this.canJump = false;
+
+            }
+            else if (canDoubleJump && jumpCount < 2)
+            {
+                this.jump.Execute(this.gameObject);
+            }
+            this.jumpCount++;         
         }
         if (Input.GetKeyDown(KeyCode.D) || this.rightPressed)
         {
@@ -57,6 +66,10 @@ public class Player1Controller : MonoBehaviour
             this.left.Execute(this.gameObject);
             this.leftPressed = true;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            canDoubleJump = true;
+        }
 
     }
 
@@ -66,6 +79,7 @@ public class Player1Controller : MonoBehaviour
         {
             // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
+            this.jumpCount = 0;
         }
     }
 }

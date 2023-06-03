@@ -13,6 +13,8 @@ public class Player2Controller : MonoBehaviour
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
+    private bool canDoubleJump = false;
+    private int jumpCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +44,17 @@ public class Player2Controller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I) && this.canJump)
         {
-            this.jump.Execute(this.gameObject);
-            this.canJump = false;
+            if (!canDoubleJump)
+            {
+                this.jump.Execute(this.gameObject);
+                this.canJump = false;
+
+            }
+            else if (canDoubleJump && jumpCount < 2)
+            {
+                this.jump.Execute(this.gameObject);
+            }
+            this.jumpCount++;
         }
         if (Input.GetKeyDown(KeyCode.L) || this.rightPressed)
         {
@@ -53,6 +64,10 @@ public class Player2Controller : MonoBehaviour
         {
             this.left.Execute(this.gameObject);
         }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            canDoubleJump = true;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -61,6 +76,7 @@ public class Player2Controller : MonoBehaviour
         {
             // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
+            this.jumpCount = 0;
         }
     }
 }
