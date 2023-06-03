@@ -66,7 +66,6 @@ public class Player1Controller : MonoBehaviour
                     this.special2.Execute(this.gameObject);
                     canDash = false;
                 }
-                time = 0;
                 
             }
 
