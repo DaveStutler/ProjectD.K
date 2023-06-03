@@ -13,35 +13,48 @@ public class Player3Controller : MonoBehaviour
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
-    private Animator animator;
+    private bool canDoubleJump = false;
+    private int jumpCount = 0;
 
+    // Start is called before the first frame update
     void Start()
     {
+        //this.gameObject.AddComponent<CaptainMotivateCommand>();
+        // this.fire1 = gameObject.AddComponent<CaptainMotivateCommand>();
         this.jump = ScriptableObject.CreateInstance<MoveCharacterJump>();
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
-        this.special = ScriptableObject.CreateInstance<SizeUp>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
-        this.animator = this.gameObject.GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Keypad6))
         {
             this.rightPressed = false;
+            // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
         if (Input.GetKeyUp(KeyCode.Keypad4))
         {
             this.leftPressed = false;
+            // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
         if (Input.GetKeyDown(KeyCode.Keypad8) && this.canJump)
         {
-            this.jump.Execute(this.gameObject);
-            this.canJump = false;
-            this.animator.SetBool("isJumping", true); // set the animator to jump
+            if (!canDoubleJump)
+            {
+                this.jump.Execute(this.gameObject);
+                this.canJump = false;
+
+            }
+            else if (canDoubleJump && jumpCount < 2)
+            {
+                this.jump.Execute(this.gameObject);
+            }
+            this.jumpCount++;
         }
         if (Input.GetKeyDown(KeyCode.Keypad6) || this.rightPressed)
         {
@@ -53,19 +66,19 @@ public class Player3Controller : MonoBehaviour
             this.left.Execute(this.gameObject);
             this.leftPressed =true;
         }
-        if (Input.GetKey(KeyCode.Keypad7))
+        if (Input.GetKeyDown(KeyCode.Keypad7))
         {
-            this.special.Execute(this.gameObject);
+            canDoubleJump = true;
         }
-        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Floor")
         {
+            // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
-            this.animator.SetBool("isJumping", false);
+            this.jumpCount = 0;
         }
     }
 }

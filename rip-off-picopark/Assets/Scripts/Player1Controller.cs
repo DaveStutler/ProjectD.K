@@ -5,26 +5,32 @@ using Player;
 
 public class Player1Controller : MonoBehaviour
 {
+    [SerializeField] private GameObject floor;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
-    private IPlayerController special;
+    private IPlayerController special1;
+    private IPlayerController special2;
     private IPlayerController horizontalStop;
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
-    private Animator animator;
+    private bool canDash = false;
+    //private float dashTimer = 0.5f;
+    //private float time = 0f;
 
+    // Start is called before the first frame update
     void Start()
     {
         this.jump = ScriptableObject.CreateInstance<MoveCharacterJump>();
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
-        this.special = ScriptableObject.CreateInstance<SizeUp>();
+        this.special1 = ScriptableObject.CreateInstance<MoveCharacterDashLeft>();
+        this.special2 = ScriptableObject.CreateInstance<MoveCharacterDashRight>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
-        this.animator = this.gameObject.GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {   
         if (Input.GetKeyUp(KeyCode.D))
@@ -42,32 +48,61 @@ public class Player1Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && this.canJump)
         {
             this.jump.Execute(this.gameObject);
+            // Since the person has jumped they are no longer in contact with the floor
+            // so they will no longer be able to jump until they gain contact again.
             this.canJump = false;
-            this.animator.SetBool("isJumping", true); // set the animator to jump
         }
         if (Input.GetKeyDown(KeyCode.D) || this.rightPressed)
         {
-            this.right.Execute(this.gameObject);
-            this.rightPressed = true;
+            if (!canDash)
+            {
+                this.right.Execute(this.gameObject);
+                this.rightPressed = true;
+            }
+            else if (canDash)
+            {
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    this.special2.Execute(this.gameObject);
+                    canDash = false;
+                }
+                time = 0;
+                
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.A) || this.leftPressed)
         {
-            this.left.Execute(this.gameObject);
-            this.leftPressed = true;
+            if(!canDash)
+            {
+                this.left.Execute(this.gameObject);
+                this.leftPressed = true;
+            }
+            else if (canDash)
+            {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    this.special1.Execute(this.gameObject);
+                    canDash = false;
+                }
+                
+            }
+            
         }
-        if (Input.GetKey(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            this.special.Execute(this.gameObject);
+            canDash = true;
+
         }
-        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
+
     }
-    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Floor")
         {
+            // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
-            this.animator.SetBool("isJumping", false);
         }
     }
 }

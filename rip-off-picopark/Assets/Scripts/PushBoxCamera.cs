@@ -35,7 +35,7 @@ namespace CameraMovement
             this.Target3.transform.position = new Vector3(12f, 3f, 0f);
             // Set camera to perspective
             Camera.main.orthographic = false;
-            managedCamera.transform.position = new Vector3(15f, 8f, -25f);
+            managedCamera.transform.position = new Vector3(15f, 2f, -18f);
         }
 
 
