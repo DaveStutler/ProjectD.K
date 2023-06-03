@@ -16,8 +16,9 @@ public class Player1Controller : MonoBehaviour
     private bool rightPressed = false;
     private bool leftPressed = false;
     private bool canDash = false;
-    //private float dashTimer = 0.5f;
-    //private float time = 0f;
+    private Animator animator;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,8 @@ public class Player1Controller : MonoBehaviour
         this.special1 = ScriptableObject.CreateInstance<MoveCharacterDashLeft>();
         this.special2 = ScriptableObject.CreateInstance<MoveCharacterDashRight>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
+        this.animator = this.gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -51,6 +54,8 @@ public class Player1Controller : MonoBehaviour
             // Since the person has jumped they are no longer in contact with the floor
             // so they will no longer be able to jump until they gain contact again.
             this.canJump = false;
+            this.animator.SetBool("isJumping", true); // set the animator to jump
+
         }
         if (Input.GetKeyDown(KeyCode.D) || this.rightPressed)
         {
@@ -65,9 +70,7 @@ public class Player1Controller : MonoBehaviour
                 {
                     this.special2.Execute(this.gameObject);
                     canDash = false;
-                }
-                time = 0;
-                
+                }                
             }
 
         }
@@ -94,15 +97,16 @@ public class Player1Controller : MonoBehaviour
             canDash = true;
 
         }
+        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
 
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
-            // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
+            this.animator.SetBool("isJumping", false);
         }
     }
 }
