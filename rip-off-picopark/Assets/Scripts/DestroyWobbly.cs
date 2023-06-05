@@ -43,21 +43,20 @@ public class DestroyWobbly : MonoBehaviour
             {
                 platform = Instantiate(wobblyPrefab, this.position, Quaternion.identity);
                 this.platformDestroyed = false;
-                pressed = false;
                 timer = 0;
             }
         }
     }
 
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Player")
         {
             // Know the player has collided with the button.
             var player = collision.gameObject;
-            if (!pressed && collision.gameObject.transform.position.y >= this.gameObject.transform.position.y)
+            if (!pressed)
             {
                 this.pressed = true;
             }

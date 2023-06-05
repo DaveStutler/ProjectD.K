@@ -9,7 +9,6 @@ public class ButtonDestroyWall : MonoBehaviour
     [SerializeField] private GameObject platform;
     private bool pressed = false;
     private bool platformDestroyed = false;
-    private float timer = 0.0f;
 
 
 
@@ -23,12 +22,6 @@ public class ButtonDestroyWall : MonoBehaviour
             Destroy(platform);
             this.platformDestroyed = true;
 
-        }
-        this.timer += Time.deltaTime;
-        if (timer >= 0.5)
-        {
-            Destroy(platform); 
-            this.platformDestroyed= true;
         }
         
     }

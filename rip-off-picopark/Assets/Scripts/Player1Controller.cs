@@ -5,7 +5,7 @@ using Player;
 
 public class Player1Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject floor;
+    [SerializeField] private GameObject respawnPoint;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -16,9 +16,10 @@ public class Player1Controller : MonoBehaviour
     private bool rightPressed = false;
     private bool leftPressed = false;
     private bool canDash = false;
+    public int keyCounter = 0;
     private Animator animator;
-
-    
+    //private float dashTimer = 0.5f;
+    //private float time = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +31,11 @@ public class Player1Controller : MonoBehaviour
         this.special2 = ScriptableObject.CreateInstance<MoveCharacterDashRight>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
         this.animator = this.gameObject.GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         if (Input.GetKeyUp(KeyCode.D))
         {
             this.rightPressed = false;
@@ -54,8 +54,7 @@ public class Player1Controller : MonoBehaviour
             // Since the person has jumped they are no longer in contact with the floor
             // so they will no longer be able to jump until they gain contact again.
             this.canJump = false;
-            this.animator.SetBool("isJumping", true); // set the animator to jump
-
+            this.animator.SetBool("isJumping", true);
         }
         if (Input.GetKeyDown(KeyCode.D) || this.rightPressed)
         {
@@ -70,13 +69,15 @@ public class Player1Controller : MonoBehaviour
                 {
                     this.special2.Execute(this.gameObject);
                     canDash = false;
-                }                
+                }
+                //time = 0;
+
             }
 
         }
         if (Input.GetKeyDown(KeyCode.A) || this.leftPressed)
         {
-            if(!canDash)
+            if (!canDash)
             {
                 this.left.Execute(this.gameObject);
                 this.leftPressed = true;
@@ -88,16 +89,15 @@ public class Player1Controller : MonoBehaviour
                     this.special1.Execute(this.gameObject);
                     canDash = false;
                 }
-                
+
             }
-            
+
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             canDash = true;
 
         }
-        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
 
     }
 
@@ -105,8 +105,27 @@ public class Player1Controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
+            // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
             this.animator.SetBool("isJumping", false);
+        }
+        if (collision.gameObject.tag == "Key" && collision.gameObject.GetComponent<KeyController>().collected == false)
+        {
+            this.keyCounter += 1;
+        }
+        if (collision.gameObject.tag == "Death")
+        {
+            var respawnPosition = this.respawnPoint.transform.position;
+            this.gameObject.transform.position = respawnPosition;
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            this.respawnPoint = collision.gameObject;
         }
     }
 }

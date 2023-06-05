@@ -5,6 +5,7 @@ using Player;
 
 public class Player2Controller : MonoBehaviour
 {
+    [SerializeField] private GameObject respawnPoint;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -13,6 +14,7 @@ public class Player2Controller : MonoBehaviour
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
+    public int keyCounter = 0;
     private Animator animator;
 
 
@@ -70,6 +72,24 @@ public class Player2Controller : MonoBehaviour
         {
             this.canJump = true;
             this.animator.SetBool("isJumping", false);
+        }
+        if (collision.gameObject.tag == "Key" && collision.gameObject.GetComponent<KeyController>().collected ==false)
+        {
+            this.keyCounter += 1;
+        }
+        if (collision.gameObject.tag == "Death")
+        {
+            var respawnPosition = this.respawnPoint.transform.position;
+            this.gameObject.transform.position = respawnPosition;
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            this.respawnPoint = collision.gameObject;
         }
     }
 }

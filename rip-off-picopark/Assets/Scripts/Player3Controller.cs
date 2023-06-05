@@ -5,6 +5,7 @@ using Player;
 
 public class Player3Controller : MonoBehaviour
 {
+    [SerializeField] private GameObject respawnPoint;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -15,7 +16,7 @@ public class Player3Controller : MonoBehaviour
     private bool leftPressed = false;
     private bool canDoubleJump = false;
     private int jumpCount = 0;
-    private Animator animator;
+    public int keyCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,6 @@ public class Player3Controller : MonoBehaviour
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
-        this.animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,12 +50,11 @@ public class Player3Controller : MonoBehaviour
             {
                 this.jump.Execute(this.gameObject);
                 this.canJump = false;
-                this.animator.SetBool("isJumping", true); // set the animator to jump
+
             }
             else if (canDoubleJump && jumpCount < 2)
             {
                 this.jump.Execute(this.gameObject);
-                this.animator.SetBool("isJumping", true); // set the animator to jump
             }
             this.jumpCount++;
         }
@@ -73,17 +72,33 @@ public class Player3Controller : MonoBehaviour
         {
             canDoubleJump = true;
         }
-        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
             // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
             this.jumpCount = 0;
-            this.animator.SetBool("isJumping", false);
+        }
+        if (collision.gameObject.tag == "Key" && collision.gameObject.GetComponent<KeyController>().collected == false)
+        {
+            this.keyCounter += 1;
+        }
+        if (collision.gameObject.tag == "Death")
+        {
+            var respawnPosition = this.respawnPoint.transform.position;
+            this.gameObject.transform.position = respawnPosition;
+        }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            this.respawnPoint = collision.gameObject;
         }
     }
 }
