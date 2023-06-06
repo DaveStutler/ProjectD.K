@@ -30,12 +30,12 @@ namespace CameraMovement
             managedCamera = gameObject.GetComponent<Camera>();
             cameraLineRenderer = gameObject.GetComponent<LineRenderer>();
             // players starting position
-            this.Target1.transform.position = new Vector3(3.5f, 4f, 0f);
-            this.Target2.transform.position = new Vector3(1.5f, 4f, 0f);
-            this.Target3.transform.position = new Vector3(-0.5f, 4f, 0f);
+            this.Target1.transform.position = new Vector3(-31f, 5f, 0f);
+            this.Target2.transform.position = new Vector3(-34f, 5f, 0f);
+            this.Target3.transform.position = new Vector3(-37f, 5f, 0f);
             // Set camera to perspective
             Camera.main.orthographic = false;
-            managedCamera.transform.position = new Vector3(2.5f, 7.3f, -25f);
+            managedCamera.transform.position = new Vector3(-33f, 7.3f, -25f);
         }
 
 

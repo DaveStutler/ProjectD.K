@@ -63,7 +63,7 @@ public class Player2Controller : MonoBehaviour
         {
             this.special.Execute(this.gameObject);
         }
-        this.animator.SetFloat("speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
+        this.animator.SetFloat("Speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -18,8 +18,7 @@ public class Player1Controller : MonoBehaviour
     private bool canDash = false;
     public int keyCounter = 0;
     private Animator animator;
-    //private float dashTimer = 0.5f;
-    //private float time = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -70,8 +69,6 @@ public class Player1Controller : MonoBehaviour
                     this.special2.Execute(this.gameObject);
                     canDash = false;
                 }
-                //time = 0;
-
             }
 
         }
@@ -89,7 +86,6 @@ public class Player1Controller : MonoBehaviour
                     this.special1.Execute(this.gameObject);
                     canDash = false;
                 }
-
             }
 
         }
@@ -98,6 +94,7 @@ public class Player1Controller : MonoBehaviour
             canDash = true;
 
         }
+        this.animator.SetFloat("Speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
 
     }
 

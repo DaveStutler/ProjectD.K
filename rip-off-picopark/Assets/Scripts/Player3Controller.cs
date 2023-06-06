@@ -17,6 +17,7 @@ public class Player3Controller : MonoBehaviour
     private bool canDoubleJump = false;
     private int jumpCount = 0;
     public int keyCounter = 0;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class Player3Controller : MonoBehaviour
         this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
         this.horizontalStop = ScriptableObject.CreateInstance<StopHorizontalMovement>();
+        this.animator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,11 +52,13 @@ public class Player3Controller : MonoBehaviour
             {
                 this.jump.Execute(this.gameObject);
                 this.canJump = false;
+                this.animator.SetBool("isJumping", true); 
 
             }
             else if (canDoubleJump && jumpCount < 2)
             {
                 this.jump.Execute(this.gameObject);
+                this.animator.SetBool("isJumping", true); 
             }
             this.jumpCount++;
         }
@@ -72,6 +76,7 @@ public class Player3Controller : MonoBehaviour
         {
             canDoubleJump = true;
         }
+        this.animator.SetFloat("Speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x/5.0f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -81,6 +86,7 @@ public class Player3Controller : MonoBehaviour
             // Know the player has collided with the floor meaning they can jump again.
             this.canJump = true;
             this.jumpCount = 0;
+            this.animator.SetBool("isJumping", false);
         }
         if (collision.gameObject.tag == "Key" && collision.gameObject.GetComponent<KeyController>().collected == false)
         {
