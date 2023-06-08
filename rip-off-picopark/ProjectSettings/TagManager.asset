@@ -8,6 +8,12 @@ TagManager:
 =======
   tags:
   - Floor
+<<<<<<< Updated upstream
+  - Death
+  - CheckPoint
+>>>>>>> Stashed changes
+=======
+  - Key
   - Death
   - CheckPoint
 >>>>>>> Stashed changes
