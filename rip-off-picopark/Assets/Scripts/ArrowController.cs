@@ -10,6 +10,8 @@ public class ArrowController : MonoBehaviour
         if (this.gameObject.transform.position.y <= -5)
         {
             Destroy(this.gameObject);
+            Debug.Log("HERE");
         }
+        
     }
 }

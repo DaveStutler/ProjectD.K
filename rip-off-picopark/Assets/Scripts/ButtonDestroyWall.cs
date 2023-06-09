@@ -6,7 +6,7 @@ public class ButtonDestroyWall : MonoBehaviour
 {
     // The gameObject in the position of the platform that needs to be spawned
     // and the object that needs to be spawned in that position. 
-    [SerializeField] private GameObject platform;
+    [SerializeField] private GameObject wall;
     private bool pressed = false;
     private bool platformDestroyed = false;
 
@@ -19,8 +19,22 @@ public class ButtonDestroyWall : MonoBehaviour
         {
             // Need to check if the button has been pressed and then also if the platform has not been moved and if the platform exists.
             // Want to move it to the final position. (TO DO)
-            Destroy(platform);
-            this.platformDestroyed = true;
+            if (wall.name == "ButtonWobbly")
+            {
+                var platformStatus = wall.GetComponent<DestroyWobbly>().platformDestroyed;
+                if (platformStatus == false)
+                {
+                    Destroy(wall.GetComponent<DestroyWobbly>().platform);
+                    Destroy(wall);
+                    this.platformDestroyed = true;
+                }
+            }
+            else
+            {
+                Destroy(wall);
+                this.platformDestroyed = true;
+            }
+
 
         }
         
