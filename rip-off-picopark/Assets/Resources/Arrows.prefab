@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7750981467299820748}
   - component: {fileID: -3801383059212315290}
   - component: {fileID: 2246979930965970947}
+  - component: {fileID: -1668372164370494272}
   m_Layer: 0
   m_Name: Arrows
   m_TagString: Death
@@ -125,3 +126,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343a290f28831c3488678fdcd24f3db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &-1668372164370494272
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886914197164521599}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
