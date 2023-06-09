@@ -48,12 +48,13 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Add an entry for each platform or input style your project supports.**
 
-## Game Logic
+## Game Logic: Kaylie Lam and Yingchen Gu
 
 
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
+
 Kaylie Lam:
-hhhhh
+
 
 
 Yingchen Gu:
