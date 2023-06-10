@@ -4142,7 +4142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1998023322}
         m_TargetAssemblyTypeName: PlaySceneManager, Assembly-CSharp
-        m_MethodName: goToSelection
+        m_MethodName: goToSelectionScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4202,7 +4202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5815fe1400fe45e40b5c78b71e6055ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: SelectionScreen
 --- !u!1 &2074889444
 GameObject:
   m_ObjectHideFlags: 0
