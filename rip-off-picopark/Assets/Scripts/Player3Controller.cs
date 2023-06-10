@@ -14,7 +14,7 @@ public class Player3Controller : MonoBehaviour
     private bool canJump = true;
     private bool rightPressed = false;
     private bool leftPressed = false;
-    private bool canDoubleJump = false;
+    private bool canDoubleJump = true;
     private int jumpCount = 0;
     public int keyCounter = 0;
     private Animator animator;

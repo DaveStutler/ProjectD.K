@@ -11,5 +11,14 @@ public class ArrowController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Death")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -6,10 +6,10 @@ public class DestroyWobbly : MonoBehaviour
 {
     // The gameObject in the position of the platform that needs to be spawned
     // and the object that needs to be spawned in that position. 
-    [SerializeField] private GameObject platform;
+    [SerializeField] public GameObject platform;
     [SerializeField] private GameObject wobblyPrefab;
     private bool pressed = false;
-    private bool platformDestroyed = false;
+    public bool platformDestroyed = false;
     //private bool wobblyDestroyed = false;
     private float timer = 0.0f;
     private Vector2 position;
