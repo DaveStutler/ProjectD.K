@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScreen.unity
+    guid: 529bfdebcbfd8584a869395ff38b1241
+  - enabled: 1
+    path: Assets/Scenes/SelectionScreen.unity
+    guid: 480a2a63670973f4189c91e4234b16cb
+  - enabled: 1
+    path: Assets/Scenes/Jail_Escape.unity
+    guid: f10f6a02f4f77cb4ab0836043a9f1efd
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: c64263199a3b0864dbbc65de21a97ab8
+  - enabled: 1
+    path: Assets/Scenes/Island.unity
+    guid: a938c88259c2f8747b0d5bc6f455fd03
+  - enabled: 1
+    path: Assets/Scenes/ThankYouScreen.unity
+    guid: b1f2ebf813d437c4bb601bed7cc2e889
   m_configObjects: {}
