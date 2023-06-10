@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8845796915594633479}
   - component: {fileID: 6874863177166516442}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Platform
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,12 +27,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576429173008519867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.28153, y: 3.18, z: 0}
+  m_LocalPosition: {x: 45.29346, y: 2.3960166, z: 0}
   m_LocalScale: {x: 9, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1543648368334828873
 SpriteRenderer:

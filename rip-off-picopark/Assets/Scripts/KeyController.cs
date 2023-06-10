@@ -7,7 +7,8 @@ public class KeyController : MonoBehaviour
     [SerializeField] private int leashDistance = 5;
     public bool collected = false;
     private GameObject collectedBy;
-    private float keySpeed = 1.0f;
+    private float keySpeed = 5.0f;
+    private float catchUpKeySpeed = 1.0f;
 
 
 
@@ -23,9 +24,13 @@ public class KeyController : MonoBehaviour
             this.gameObject.transform.position = Vector3.MoveTowards(keyPosition, currentPlayerPosition, keySpeed * Time.deltaTime);
 
         }
+        if (collected && distance.magnitude < this.leashDistance)
+        {
+            this.gameObject.transform.position = Vector3.MoveTowards(keyPosition, currentPlayerPosition, catchUpKeySpeed * Time.deltaTime);
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         // Want to make it so that if theres a collision with a player it must follow that player. 
         if (collision.gameObject.tag == "Player" && !collected)
