@@ -16,7 +16,6 @@ namespace Player
             if (rigidBody != null)
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, this.speed);
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
         }
     }

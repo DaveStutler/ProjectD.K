@@ -89,7 +89,7 @@ public class Player1Controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             canDash = true;
 
