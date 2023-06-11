@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-
+    private float lifetime = 3.0f;
     void Update()
-    {
+    {   
+        this.lifetime -= Time.deltaTime;
         if (this.gameObject.transform.position.y <= -5)
+        {
+            Destroy(this.gameObject);
+        }
+        else if(lifetime <=0)
         {
             Destroy(this.gameObject);
         }

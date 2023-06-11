@@ -59,7 +59,7 @@ public class Player2Controller : MonoBehaviour
             this.left.Execute(this.gameObject);
             this.leftPressed = true;
         }
-        if (Input.GetKey(KeyCode.U))
+        if (Input.GetKey(KeyCode.K))
         {
             this.special.Execute(this.gameObject);
         }

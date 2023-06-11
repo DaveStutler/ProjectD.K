@@ -119,10 +119,10 @@ public class Player1Controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision " + collision.gameObject.name);
         if (collision.gameObject.tag == "CheckPoint")
         {
             this.respawnPoint = collision.gameObject;
         }
+
     }
 }
