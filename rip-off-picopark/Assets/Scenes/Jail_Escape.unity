@@ -224,7 +224,7 @@ MonoBehaviour:
   player1: {fileID: 1693215871}
   player2: {fileID: 734179172}
   player3: {fileID: 978469125}
-  sceneToLoad: Dungeon
+  sceneToLoad: SelectionScreen
 --- !u!61 &41648078
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23013,6 +23013,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177137378}
     m_Modifications:
+    - target: {fileID: 591746852171755660, guid: 872cf6b24a873ce49a349eb7938dd444, type: 3}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 2138443046}
     - target: {fileID: 591746852171755660, guid: 872cf6b24a873ce49a349eb7938dd444, type: 3}
       propertyPath: platform
       value: 
