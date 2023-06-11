@@ -89,7 +89,7 @@ public class Player1Controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             canDash = true;
 
@@ -115,11 +115,11 @@ public class Player1Controller : MonoBehaviour
             var respawnPosition = this.respawnPoint.transform.position;
             this.gameObject.transform.position = respawnPosition;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("collision " + collision.gameObject.name);
         if (collision.gameObject.tag == "CheckPoint")
         {
             this.respawnPoint = collision.gameObject;
