@@ -39,7 +39,7 @@ public class DestroyWobbly : MonoBehaviour
         else if (platformDestroyed)
         {
             this.timer += Time.deltaTime;
-            if (timer >= 10)
+            if (timer >= 3)
             {
                 platform = Instantiate(wobblyPrefab, this.position, Quaternion.identity);
                 this.platformDestroyed = false;

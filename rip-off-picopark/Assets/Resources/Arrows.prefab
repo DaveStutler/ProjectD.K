@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3801383059212315290}
   - component: {fileID: 2246979930965970947}
   - component: {fileID: -1668372164370494272}
+  - component: {fileID: 3578620343487850405}
   m_Layer: 0
   m_Name: Arrows
   m_TagString: Death
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10d729a6972e0704fb4721d759ce5833, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81206ab08e710bf4eb66b81322b242f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,3 +162,24 @@ CircleCollider2D:
   m_Offset: {x: 0.003309109, y: -0.13549529}
   serializedVersion: 2
   m_Radius: 0.2122968
+--- !u!95 &3578620343487850405
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886914197164521599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 652d8d209daa9ed4394f42571efc8081, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
