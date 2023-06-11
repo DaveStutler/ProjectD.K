@@ -6,9 +6,9 @@ public class KeyController : MonoBehaviour
 {
     [SerializeField] private int leashDistance = 5;
     public bool collected = false;
-    private GameObject collectedBy = null;
+    private GameObject collectedBy;
     private float keySpeed = 5.0f;
-    private float keyCatchUpSpeed = 2.0f;
+    private float catchUpKeySpeed = 1.0f;
 
 
 
@@ -24,9 +24,9 @@ public class KeyController : MonoBehaviour
             this.gameObject.transform.position = Vector3.MoveTowards(keyPosition, currentPlayerPosition, keySpeed * Time.deltaTime);
 
         }
-        else
+        if (collected && distance.magnitude < this.leashDistance)
         {
-            this.gameObject.transform.position = Vector3.MoveTowards(keyPosition, currentPlayerPosition, keyCatchUpSpeed * Time.deltaTime);
+            this.gameObject.transform.position = Vector3.MoveTowards(keyPosition, currentPlayerPosition, catchUpKeySpeed * Time.deltaTime);
         }
     }
 
@@ -38,18 +38,19 @@ public class KeyController : MonoBehaviour
             collected = true;
             collectedBy = collision.gameObject;
             
-            if (collectedBy.name == "Player 1")
+            if (collision.gameObject.name == "Player 1")
             {
-                collectedBy.GetComponent<Player1Controller>().keyCounter += 1;
+                collision.gameObject.GetComponent<Player1Controller>().keyCounter += 1;
             }
-            if (collectedBy.name == "Player 2")
+            if (collision.gameObject.name == "Player 2")
             {
-                collectedBy.GetComponent<Player2Controller>().keyCounter += 1;
+                collision.gameObject.GetComponent<Player2Controller>().keyCounter += 1;
             }
-            if (collectedBy.name == "Player 3")
+            if (collision.gameObject.name == "Player 3")
             {
-                collectedBy.GetComponent<Player3Controller>().keyCounter += 1;
+                collision.gameObject.GetComponent<Player3Controller>().keyCounter += 1;
             }
+
         }
 
     }

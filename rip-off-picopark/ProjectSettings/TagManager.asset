@@ -3,20 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-  tags: []
-=======
   tags:
   - Floor
-<<<<<<< Updated upstream
-  - Death
-  - CheckPoint
->>>>>>> Stashed changes
-=======
-  - Key
-  - Death
-  - CheckPoint
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -24,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - UI-Lower
   - 
   - 
   - 

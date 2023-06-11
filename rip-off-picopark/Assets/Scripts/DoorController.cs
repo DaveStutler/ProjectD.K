@@ -23,10 +23,11 @@ public class DoorController : MonoBehaviour
         this.player2Keys = this.player2.GetComponent<Player2Controller>().keyCounter;
         this.player3Keys = this.player3.GetComponent<Player3Controller>().keyCounter;
         var total_keys = player1Keys+player2Keys+player3Keys;
+
         if (total_keys == 3 && !this.doorOpen)
         {
             this.doorOpen = true;
-            // The door opens here. (Add Animation)
+            // The door opens here.
         }
 
     }

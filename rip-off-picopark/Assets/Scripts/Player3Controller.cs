@@ -52,15 +52,17 @@ public class Player3Controller : MonoBehaviour
             {
                 this.jump.Execute(this.gameObject);
                 this.canJump = false;
+                this.animator.SetBool("isJumping", true); 
 
             }
             else if (canDoubleJump && jumpCount < 2)
             {
                 this.jump.Execute(this.gameObject);
+                this.animator.SetBool("isJumping", true); 
             }
             this.jumpCount++;
         }
-            if (Input.GetKeyDown(KeyCode.Keypad6) || this.rightPressed)
+        if (Input.GetKeyDown(KeyCode.Keypad6) || this.rightPressed)
         {
             this.right.Execute(this.gameObject);
             this.rightPressed = true;
@@ -97,6 +99,7 @@ public class Player3Controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "CheckPoint")
         {
             this.respawnPoint = collision.gameObject;

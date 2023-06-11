@@ -106,20 +106,22 @@ public class Player1Controller : MonoBehaviour
             this.canJump = true;
             this.animator.SetBool("isJumping", false);
         }
+
         if (collision.gameObject.tag == "Death")
         {
             var respawnPosition = this.respawnPoint.transform.position;
             this.gameObject.transform.position = respawnPosition;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "CheckPoint")
         {
             this.respawnPoint = collision.gameObject;
         }
+
 
     }
 }
