@@ -6,7 +6,8 @@ public class ArrowCreator : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject arrowPrefab;
-    [SerializeField] private float timeInterval = 1.5f;
+    [SerializeField] private float timeInterval = 20.0f;
+    [SerializeField] private float arrowSpeed = -1.0f;
     private float currentTime = 0f;
     private Vector3 creatorLocation;
 
@@ -26,7 +27,7 @@ public class ArrowCreator : MonoBehaviour
             var rigidBody = arrow.GetComponent<Rigidbody2D>();
             if (rigidBody != null)
             {
-                rigidBody.velocity = new Vector2(rigidBody.velocity.x, -5);
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, arrowSpeed);
 
             }
         }

@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2167954426158854894
 SpriteRenderer:
@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 1886914197164521599, guid: 6e0aa5f1cd8dd2045ae57c870cb9dbeb, type: 3}
   timeInterval: 1.5
+  arrowSpeed: -1

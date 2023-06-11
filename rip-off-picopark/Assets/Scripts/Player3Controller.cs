@@ -88,10 +88,7 @@ public class Player3Controller : MonoBehaviour
             this.jumpCount = 0;
             this.animator.SetBool("isJumping", false);
         }
-        if (collision.gameObject.tag == "Key" && collision.gameObject.GetComponent<KeyController>().collected == false)
-        {
-            this.keyCounter += 1;
-        }
+
         if (collision.gameObject.tag == "Death")
         {
             var respawnPosition = this.respawnPoint.transform.position;
@@ -102,9 +99,11 @@ public class Player3Controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "CheckPoint")
         {
             this.respawnPoint = collision.gameObject;
         }
+
     }
 }

@@ -37,6 +37,20 @@ public class KeyController : MonoBehaviour
         {
             collected = true;
             collectedBy = collision.gameObject;
+            
+            if (collision.gameObject.name == "Player 1")
+            {
+                collision.gameObject.GetComponent<Player1Controller>().keyCounter += 1;
+            }
+            if (collision.gameObject.name == "Player 2")
+            {
+                collision.gameObject.GetComponent<Player2Controller>().keyCounter += 1;
+            }
+            if (collision.gameObject.name == "Player 3")
+            {
+                collision.gameObject.GetComponent<Player3Controller>().keyCounter += 1;
+            }
+
         }
 
     }
