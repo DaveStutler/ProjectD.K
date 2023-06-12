@@ -101,7 +101,6 @@ public class Player1Controller : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {   
-        Debug.Log("colling with " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
             // Know the player has collided with the floor meaning they can jump again.

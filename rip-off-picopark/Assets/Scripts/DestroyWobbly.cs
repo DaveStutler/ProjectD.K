@@ -34,6 +34,7 @@ public class DestroyWobbly : MonoBehaviour
                 this.platformDestroyed = true;
                 timer = 0;
             }
+
         }
         // Creates a new plaform for wobbly brick after cooldown so player can try the challenge again
         else if (platformDestroyed)
