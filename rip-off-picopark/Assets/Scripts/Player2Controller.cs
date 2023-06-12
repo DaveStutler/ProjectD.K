@@ -68,6 +68,7 @@ public class Player2Controller : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Debug.Log("colliding " + collision.gameObject.tag);
         if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
             this.canJump = true;
@@ -79,7 +80,6 @@ public class Player2Controller : MonoBehaviour
             var respawnPosition = this.respawnPoint.transform.position;
             this.gameObject.transform.position = respawnPosition;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
