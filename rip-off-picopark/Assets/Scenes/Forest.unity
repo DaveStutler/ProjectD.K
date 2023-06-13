@@ -3297,7 +3297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2785057662539963060, guid: 4a32658ffa136e24c836541d819ad345, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.36
+      value: 19.25
       objectReference: {fileID: 0}
     - target: {fileID: 2785057662539963060, guid: 4a32658ffa136e24c836541d819ad345, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4823,9 +4823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d236654a5370824d853bf77b05f51e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
+  player1: {fileID: 747065499}
+  player2: {fileID: 376523088}
+  player3: {fileID: 1152672734}
   sceneToLoad: ThankYouScreen
 --- !u!212 &1291174930
 SpriteRenderer:
