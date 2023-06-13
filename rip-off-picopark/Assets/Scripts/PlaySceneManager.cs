@@ -13,6 +13,21 @@ public class PlaySceneManager : MonoBehaviour
 
     // To change scene from Play to Selection screen.
     // Build index: 1
+    public Button[] levelButtons;
+
+    void Start()
+    {
+        int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+        
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 2 > levelAt)
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
+    }
+
     public void goToSelectionScreen()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
