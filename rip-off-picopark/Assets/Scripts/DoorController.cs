@@ -41,6 +41,10 @@ public class DoorController : MonoBehaviour
     {
         if (this.doorOpen)
         {
+            int val = PlayerPrefs.GetInt("levelAt");
+            Debug.Log(val);
+            PlayerPrefs.SetInt("levelAt", SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("after new: " +  val);
             SceneManager.LoadScene(sceneToLoad);
         }
     }
