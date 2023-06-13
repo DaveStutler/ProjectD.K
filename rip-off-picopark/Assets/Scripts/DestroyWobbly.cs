@@ -8,6 +8,8 @@ public class DestroyWobbly : MonoBehaviour
     // and the object that needs to be spawned in that position. 
     [SerializeField] public GameObject platform;
     [SerializeField] private GameObject wobblyPrefab;
+    [SerializeField] private float timeInterval = 1.5f;
+    [SerializeField] private float timeUntilReappear = 3.0f;
     private bool pressed = false;
     public bool platformDestroyed = false;
     //private bool wobblyDestroyed = false;
@@ -28,7 +30,7 @@ public class DestroyWobbly : MonoBehaviour
         if (pressed && !platformDestroyed)
         {
             this.timer += Time.deltaTime;
-            if (timer >= 1.5)
+            if (timer >= this.timeInterval)
             {
                 Destroy(platform);
                 this.platformDestroyed = true;
@@ -40,7 +42,7 @@ public class DestroyWobbly : MonoBehaviour
         else if (platformDestroyed)
         {
             this.timer += Time.deltaTime;
-            if (timer >= 3)
+            if (timer >= timeUntilReappear)
             {
                 platform = Instantiate(wobblyPrefab, this.position, Quaternion.identity);
                 this.platformDestroyed = false;
