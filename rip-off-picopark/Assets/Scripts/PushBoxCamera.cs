@@ -52,6 +52,7 @@ namespace CameraMovement
             var cameraRightEdge = cameraPosition.x + bottomRight.x;
             var cameraLeftEdge = cameraPosition.x + topLeft.x;
             var cameraBottomEdge = cameraPosition.y + (bottomRight.y);
+            var TempZoomOut = -35.0f;
            
             // right side movement
             if (target1Position.x >= cameraRightEdge)
@@ -141,39 +142,20 @@ namespace CameraMovement
             // for going down and up .............. need to stay in the middle 
             if (target1Position.y <= cameraBottomEdge)
             {
-                Debug.Log("Target 1 Position " + target1Position + " Camera bottom " + cameraBottomEdge);
-            //     if (( target2Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge ))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target1Position.y - bottomRight.y, cameraPosition.z);
-            //     }
-            //     else if (!(( target2Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge )))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target1Position.y + bottomRight.y, cameraPosition.z);
-            //     }
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
             }
             if (target2Position.y <= cameraBottomEdge)
             {
-                Debug.Log("Target 2 Position " + target1Position + " Camera bottom " + cameraBottomEdge);
-            //     if (( target1Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge ))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target2Position.y - bottomRight.y, cameraPosition.z);
-            //     }
-            //     else if (!(( target1Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge )))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target2Position.y + bottomRight.y, cameraPosition.z);
-            //     }
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
             }
             if (target3Position.y <= cameraBottomEdge)
             {
-                Debug.Log("Target 3 Position " + target1Position + " Camera bottom " + cameraBottomEdge);
-            //     if (( target1Position.y < cameraBottomEdge ) && ( target2Position.y < cameraBottomEdge ))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target3Position.y - bottomRight.y, cameraPosition.z);
-            //     }
-            //     else if (!(( target1Position.y < cameraBottomEdge ) && ( target2Position.y < cameraBottomEdge )))
-            //     {
-            //         cameraPosition = new Vector3(cameraPosition.x, target3Position.y + bottomRight.y, cameraPosition.z);
-            //     }
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
+            }
+            if (!(target3Position.y <= cameraBottomEdge) && !(target2Position.y <= cameraBottomEdge) && !(target1Position.y <= cameraBottomEdge))
+            {
+                Debug.Log("here");
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, -25.0f);
             }
 
 
