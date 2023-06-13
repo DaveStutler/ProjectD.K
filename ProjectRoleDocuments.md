@@ -85,6 +85,10 @@ Level 2, also known as the Forest level, was focused on showing even more of wha
 Level 3, also known as the Island level, was focused around testing the players' overall knowledge of the game. At the time of designing, Zahira, who is in charge of narrative design, wanted to incorporate a secret ending that would unlock based on the level’s completion speed. So most of these puzzles were designed to be not that complicated yet be an obstacle in the way of getting the secret ending. Some beginning puzzles shown in the level design were meant to be more time wasting in solving the level. Knowledge of the game’s mechanics rather than the players’ would be tested in these types of puzzles. For example, the second puzzle in the designs below were designed to test camera knowledge, forcing the player to jump off of the platform in order for the camera to act as another platform for them to reach the button. But because these types of puzzles weren’t tested for feasibility, I made the level design document a bit more open so that the people implementing level designs were able to rearrange the puzzles for the level in any way they wanted, making it easy for them to not implement any that wouldn’t work.
 ![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1118063676751093820/IMG_0111.png)
 
+Other potential level 3 puzzle designs:
+![alt text](https://cdn.discordapp.com/attachments/1114716732037275798/1118067388911456326/IMG_3275.png)
+
+![alt text](https://cdn.discordapp.com/attachments/1114716732037275798/1118067389196677171/IMG_3274.png)
 
 Yingchen Gu:
 
@@ -113,7 +117,7 @@ Yingchen Gu:
 
 **Add a link to the full results of your gameplay tests.**
 
-[a link](https://docs.google.com/document/d/1D_9nhd4iOXguF67Z_IPUJWIznvpqB5S6Lz76Yq2A4hg/edit?usp=sharing)
+[Gameplay Testing Document](https://docs.google.com/document/d/1D_9nhd4iOXguF67Z_IPUJWIznvpqB5S6Lz76Yq2A4hg/edit?usp=sharing)
 
 
 
