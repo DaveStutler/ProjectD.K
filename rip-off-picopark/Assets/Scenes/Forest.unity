@@ -4695,7 +4695,7 @@ MonoBehaviour:
   player1: {fileID: 0}
   player2: {fileID: 0}
   player3: {fileID: 0}
-  sceneToLoad: SelectionScreen
+  sceneToLoad: ThankYouScreen
 --- !u!212 &1291174930
 SpriteRenderer:
   m_ObjectHideFlags: 0
