@@ -72,6 +72,7 @@ public class Player1Controller : MonoBehaviour
             }
 
         }
+
         if (Input.GetKeyDown(KeyCode.A) || this.leftPressed)
         {
             if (!canDash)
@@ -89,7 +90,7 @@ public class Player1Controller : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             canDash = true;
 
@@ -99,7 +100,7 @@ public class Player1Controller : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
         if (collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Player")
         {
             // Know the player has collided with the floor meaning they can jump again.

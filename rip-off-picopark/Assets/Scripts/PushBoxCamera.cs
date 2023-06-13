@@ -51,6 +51,8 @@ namespace CameraMovement
 
             var cameraRightEdge = cameraPosition.x + bottomRight.x;
             var cameraLeftEdge = cameraPosition.x + topLeft.x;
+            var cameraBottomEdge = cameraPosition.y + (bottomRight.y);
+            var TempZoomOut = -35.0f;
            
             // right side movement
             if (target1Position.x >= cameraRightEdge)
@@ -137,7 +139,24 @@ namespace CameraMovement
                     Target3.transform.position = new Vector3(cameraLeftEdge, Target3.transform.position.y, Target3.transform.position.z);
                 }
             }
-           
+            // for going down and up .............. need to stay in the middle 
+            if (target1Position.y <= cameraBottomEdge)
+            {
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
+            }
+            if (target2Position.y <= cameraBottomEdge)
+            {
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
+            }
+            if (target3Position.y <= cameraBottomEdge)
+            {
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, TempZoomOut);
+            }
+            if (!(target3Position.y <= cameraBottomEdge) && !(target2Position.y <= cameraBottomEdge) && !(target1Position.y <= cameraBottomEdge))
+            {
+                Debug.Log("here");
+                cameraPosition = new Vector3(cameraPosition.x, cameraPosition.y, -25.0f);
+            }
 
 
             managedCamera.transform.position = cameraPosition;

@@ -14,8 +14,13 @@ public class DoorController : MonoBehaviour
     private int player2Keys = 0;
     private int player3Keys = 0;
     private bool doorOpen = false;
+    private Animator animator;
 
-
+    // Start is called at the beginning
+    void Start()
+    {
+        this.animator = this.gameObject.GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,11 +32,11 @@ public class DoorController : MonoBehaviour
         if (total_keys == 3 && !this.doorOpen)
         {
             this.doorOpen = true;
-            // The door opens here.
+            this.animator.SetBool("Keys", true);
         }
 
     }
-
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (this.doorOpen)

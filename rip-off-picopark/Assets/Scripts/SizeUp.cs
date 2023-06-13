@@ -9,7 +9,7 @@ namespace Player
     public class SizeUp : ScriptableObject, IPlayerController
     {
         // declare variables
-        private float Growth = 0.03f;
+        private float Growth = 0.1f;
         private bool flip = false;
         public void Execute(GameObject gameObject)
         {
