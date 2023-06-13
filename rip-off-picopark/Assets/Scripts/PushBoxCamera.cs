@@ -51,6 +51,7 @@ namespace CameraMovement
 
             var cameraRightEdge = cameraPosition.x + bottomRight.x;
             var cameraLeftEdge = cameraPosition.x + topLeft.x;
+            var cameraBottomEdge = cameraPosition.y + bottomRight.y;
            
             // right side movement
             if (target1Position.x >= cameraRightEdge)
@@ -137,7 +138,40 @@ namespace CameraMovement
                     Target3.transform.position = new Vector3(cameraLeftEdge, Target3.transform.position.y, Target3.transform.position.z);
                 }
             }
-           
+            // for going down and up .............. need to stay in the middle 
+            if (target1Position.y <= cameraBottomEdge)
+            {
+                if (( target2Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge ))
+                {
+                    cameraPosition = new Vector3(cameraPosition.x, target1Position.y - bottomRight.y, cameraPosition.z);
+                }
+                else if (!(( target2Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge )))
+                {
+                    Target1.transform.position = new Vector3(Target1.transform.position.x, cameraBottomEdge, Target1.transform.position.z);
+                }
+            }
+            if (target2Position.y <= cameraBottomEdge)
+            {
+                if (( target1Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge ))
+                {
+                    cameraPosition = new Vector3(cameraPosition.x, target2Position.y - bottomRight.y, cameraPosition.z);
+                }
+                else if (!(( target1Position.y < cameraBottomEdge ) && ( target3Position.y < cameraBottomEdge )))
+                {
+                    Target2.transform.position = new Vector3(Target2.transform.position.x, cameraBottomEdge, Target1.transform.position.z);
+                }
+            }
+            if (target3Position.y <= cameraBottomEdge)
+            {
+                if (( target1Position.y < cameraBottomEdge ) && ( target2Position.y < cameraBottomEdge ))
+                {
+                    cameraPosition = new Vector3(cameraPosition.x, target3Position.y - bottomRight.y, cameraPosition.z);
+                }
+                else if (!(( target1Position.y < cameraBottomEdge ) && ( target2Position.y < cameraBottomEdge )))
+                {
+                    Target3.transform.position = new Vector3(Target3.transform.position.x, cameraBottomEdge, Target1.transform.position.z);
+                }
+            }
 
 
             managedCamera.transform.position = cameraPosition;
