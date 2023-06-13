@@ -3,10 +3,21 @@
 ## Summary ##
 
 **A paragraph-length pitch for your game.**
+What will you do if your leader betrays you? As a local multiplayer 2-D game, up to three players can work together (or not) to attempt to catch the pirate captain! Each pirate player has their own unique ability to escape danger and help each other succeed. Collect treasure in order to escape each level and be one step closer to taking revenge!
 
 ## Gameplay Explanation ##
 
 **In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+Each player has their own unique skill:
+Player 1: Press ‘W’, ‘A’, or ‘D’ keys for basic movement. Has a dash left or right when pressing ‘S’.
+Player 2: Press ‘I’, ‘J’, or ‘L’ keys for basic movement. Can grow and shrink in size when pressing ‘K’.
+Player 3: Uses the number pad keys ‘4’, ‘6’, or ‘8’ for basic movement. Doesn’t have another key for their ability but can double jump by pressing ‘8’ twice on the number pad.
+
+Each player has a collision with each other, which is useful to solve puzzles with.
+
+Players are bound to the screen with the camera being unable to move when players are at opposing sides of the screen.
+
+For best results, use and combine skills to its fullest in order to solve puzzles.
 
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
@@ -54,6 +65,10 @@ You should replay any **bold text** with your relevant information. Liberally us
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 Kaylie Lam:
+I helped set up the main movement controls by using the Captain Controller Script from homework 1 as a basis for our own player controllers. I revised that code so that only the player movement of up, left, and right remains. I then copied those scripts into the rest of player 2 and 3 controller scripts so that they can then be individually key binded and given their abilities.
+
+I also did the level design of the puzzles in the game. The tutorial level, called Jail escape, was a collaborative effort with the rest of the group in order to introduce game mechanics and player abilities for our group. I designed the rest of the three levels as a main part of my role. I didn’t design the level puzzles as much around the overall place of the level but rather instead for the development of the players’ game knowledge.
+![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1109050593579892736/IMG_1130.png)
 
 
 
