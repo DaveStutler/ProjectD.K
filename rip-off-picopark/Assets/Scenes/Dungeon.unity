@@ -47394,6 +47394,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.95
       objectReference: {fileID: 0}
+    - target: {fileID: 5709220839077770892, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
+      propertyPath: m_Size.y
+      value: 0.44605017
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709220839077770892, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.27696496
+      objectReference: {fileID: 0}
     - target: {fileID: 7558370499991311420, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
       propertyPath: m_Name
       value: Small Spikes (1)
@@ -50065,6 +50073,14 @@ PrefabInstance:
     - target: {fileID: 889788876525605641, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709220839077770892, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
+      propertyPath: m_Size.y
+      value: 0.494287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709220839077770892, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2528565
       objectReference: {fileID: 0}
     - target: {fileID: 7558370499991311420, guid: 663f3012bb805ac4da35e5c6d154be24, type: 3}
       propertyPath: m_Name
