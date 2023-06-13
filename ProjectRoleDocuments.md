@@ -3,10 +3,21 @@
 ## Summary ##
 
 **A paragraph-length pitch for your game.**
+What will you do if your leader betrays you? As a local multiplayer 2-D game, up to three players can work together (or not) to attempt to catch the pirate captain! Each pirate player has their own unique ability to escape danger and help each other succeed. Collect treasure in order to escape each level and be one step closer to taking revenge!
 
 ## Gameplay Explanation ##
 
 **In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+Each player has their own unique skill:
+Player 1: Press ‘W’, ‘A’, or ‘D’ keys for basic movement. Has a dash left or right when pressing ‘S’.
+Player 2: Press ‘I’, ‘J’, or ‘L’ keys for basic movement. Can grow and shrink in size when pressing ‘K’.
+Player 3: Uses the number pad keys ‘4’, ‘6’, or ‘8’ for basic movement. Doesn’t have another key for their ability but can double jump by pressing ‘8’ twice on the number pad.
+
+Each player has a collision with each other, which is useful to solve puzzles with.
+
+Players are bound to the screen with the camera being unable to move when players are at opposing sides of the screen.
+
+For best results, use and combine skills to its fullest in order to solve puzzles.
 
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
@@ -54,8 +65,30 @@ You should replay any **bold text** with your relevant information. Liberally us
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 Kaylie Lam:
+I helped set up the main movement controls by using the Captain Controller Script from homework 1 as a basis for our own player controllers. I revised that code so that only the player movement of up, left, and right remains. I then copied those scripts into the rest of player 2 and 3 controller scripts so that they can then be individually key binded and given their abilities.
+
+I also did the level design of the puzzles in the game. The tutorial level, called Jail escape, was a collaborative effort with the rest of the group in order to introduce game mechanics and player abilities for our group. I designed the rest of the three levels as a main part of my role. I didn’t design the level puzzles as much around the overall place of the level but rather instead for the development of the players’ game knowledge.
+![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1109050593579892736/IMG_1130.png)
+
+Levels 1 and 2 were designed to be fairly short with focus on exploring the potentials for the players. Level 3, which was to be our final level, is focused around testing the players’ knowledge of the game.
+
+Level 1, also known as the Dungeon level, was focused around showing some of the teamwork capabilities that each player has with each other as well as some more of the potential dangers to be seen in the game.
+![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1118063675048218686/IMG_0109.png)
 
 
+
+
+Level 2, also known as the Forest level, was focused on showing even more of what the players' individual skills can do as well as showing off more of the game’s mechanics. As seen by puzzle 3 having the size-shifting player to shrink in order to solve the puzzle.
+![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1118063676126146580/IMG_0110.png)
+
+
+Level 3, also known as the Island level, was focused around testing the players' overall knowledge of the game. At the time of designing, Zahira, who is in charge of narrative design, wanted to incorporate a secret ending that would unlock based on the level’s completion speed. So most of these puzzles were designed to be not that complicated yet be an obstacle in the way of getting the secret ending. Some beginning puzzles shown in the level design were meant to be more time wasting in solving the level. Knowledge of the game’s mechanics rather than the players’ would be tested in these types of puzzles. For example, the second puzzle in the designs below were designed to test camera knowledge, forcing the player to jump off of the platform in order for the camera to act as another platform for them to reach the button. But because these types of puzzles weren’t tested for feasibility, I made the level design document a bit more open so that the people implementing level designs were able to rearrange the puzzles for the level in any way they wanted, making it easy for them to not implement any that wouldn’t work.
+![alt text](https://cdn.discordapp.com/attachments/1092602368375398482/1118063676751093820/IMG_0111.png)
+
+Other potential level 3 puzzle designs:
+![alt text](https://cdn.discordapp.com/attachments/1114716732037275798/1118067388911456326/IMG_3275.png)
+
+![alt text](https://cdn.discordapp.com/attachments/1114716732037275798/1118067389196677171/IMG_3274.png)
 
 Yingchen Gu:
 
@@ -84,7 +117,13 @@ Yingchen Gu:
 
 **Add a link to the full results of your gameplay tests.**
 
+[Gameplay Testing Document](https://docs.google.com/document/d/1D_9nhd4iOXguF67Z_IPUJWIznvpqB5S6Lz76Yq2A4hg/edit?usp=sharing)
+
+
+
 **Summarize the key findings from your gameplay tests.**
+
+Most of the suggestions in round 1 consisted of gameplay design critiques to likely enhance player experience. There was a couple missing components such as the button not working through being bound to an object. The only real bugs found was the camera box issue.
 
 ## Narrative Design: Zahira Ghazali
 
