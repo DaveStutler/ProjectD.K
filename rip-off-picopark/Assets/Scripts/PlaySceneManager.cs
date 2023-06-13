@@ -30,6 +30,7 @@ public class PlaySceneManager : MonoBehaviour
 
     public void goToSelectionScreen()
     {
+        PlayerPrefs.SetInt("levelAt", 2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
