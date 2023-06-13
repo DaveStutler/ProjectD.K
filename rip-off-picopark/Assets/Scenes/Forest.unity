@@ -1573,9 +1573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrawLogic: 0
-  Target1: {fileID: 0}
-  Target2: {fileID: 0}
-  Target3: {fileID: 0}
+  Target1: {fileID: 747065499}
+  Target2: {fileID: 376523088}
+  Target3: {fileID: 1152672734}
   topLeft: {x: -18, y: 5}
   bottomRight: {x: 6, y: -5}
 --- !u!81 &493931034
