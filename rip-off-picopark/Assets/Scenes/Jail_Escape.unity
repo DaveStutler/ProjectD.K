@@ -224,7 +224,7 @@ MonoBehaviour:
   player1: {fileID: 1693215871}
   player2: {fileID: 734179172}
   player3: {fileID: 978469125}
-  sceneToLoad: Dungeon
+  sceneToLoad: SelectionScreen
 --- !u!61 &41648078
 BoxCollider2D:
   m_ObjectHideFlags: 0
