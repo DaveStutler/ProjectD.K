@@ -7,6 +7,7 @@ public class Player1Controller : MonoBehaviour
 {
     [SerializeField] private GameObject respawnPoint;
     [SerializeField] private AudioSource footSteps;
+    [SerializeField] private AudioSource deathSoundEffect;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -116,6 +117,7 @@ public class Player1Controller : MonoBehaviour
 
         if (collision.gameObject.tag == "Death")
         {
+            deathSoundEffect.Play();
             var respawnPosition = this.respawnPoint.transform.position;
             this.gameObject.transform.position = respawnPosition;
         }
@@ -128,7 +130,6 @@ public class Player1Controller : MonoBehaviour
         {
             this.respawnPoint = collision.gameObject;
         }
-
 
     }
 }
