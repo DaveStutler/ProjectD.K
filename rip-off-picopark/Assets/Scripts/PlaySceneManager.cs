@@ -9,15 +9,19 @@ using GeneralSceneManager;
 
 public class PlaySceneManager : MonoBehaviour
 {
-    //[SerializeField] private string sceneToLoad;
+    [SerializeField] private GameObject lockDungeon;
+    [SerializeField] private GameObject lockForest;
+    [SerializeField] private GameObject dungeonMask;
+    [SerializeField] private GameObject forestMask;
 
     // To change scene from Play to Selection screen.
     // Build index: 1
     public Button[] levelButtons;
+    private int levelAt;
 
     void Start()
     {
-        int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+        levelAt = PlayerPrefs.GetInt("levelAt", 2);
         
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -28,10 +32,47 @@ public class PlaySceneManager : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (levelAt == 2)
+        {
+            // Show chains when level is locked.
+            lockDungeon.SetActive(true);
+            lockForest.SetActive(true);
+
+            // Make the locked levels dimmer than unlocked ones.
+            dungeonMask.SetActive(true);
+            forestMask.SetActive(true);
+        }
+        else if (levelAt == 3)
+        {
+            // Unlock dungeon stage, but keep forest locked.
+            lockDungeon.SetActive(false);
+            lockForest.SetActive(true);
+
+            // Make the locked levels dimmer than unlocked ones.
+            dungeonMask.SetActive(false);
+            forestMask.SetActive(true);
+        }
+        else if (levelAt == 4)
+        {
+            // Unlock both stages.
+            lockDungeon.SetActive(false);
+            lockForest.SetActive(false);
+
+            // Make the locked levels dimmer than unlocked ones.
+            dungeonMask.SetActive(false);
+            forestMask.SetActive(false);
+        }
+    }
+
     public void goToSelectionScreen()
     {
         PlayerPrefs.SetInt("levelAt", 2);
+        levelAt = PlayerPrefs.GetInt("levelAt");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        lockDungeon.SetActive(false);
+        
     }
 
 
