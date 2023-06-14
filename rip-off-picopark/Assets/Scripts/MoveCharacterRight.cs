@@ -8,6 +8,7 @@ namespace Player
 {
     public class MoveCharacterRight : ScriptableObject, IPlayerController
     {
+        [SerializeField] private AudioSource footStep;
         private float speed = 5.0f;
 
         public void Execute(GameObject gameObject)

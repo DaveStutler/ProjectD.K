@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThankYouScreen.unity
     guid: b1f2ebf813d437c4bb601bed7cc2e889
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: e4bf7844d474af0428bb01e68c8eaa9a
   m_configObjects: {}

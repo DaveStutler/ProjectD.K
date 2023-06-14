@@ -10,6 +10,7 @@ public class DoorController : MonoBehaviour
     [SerializeField] private GameObject player2;
     [SerializeField] private GameObject player3;
     [SerializeField] private string sceneToLoad;
+    [SerializeField] private AudioSource doorSoundEffect;
     private int player1Keys = 0;
     private int player2Keys = 0;
     private int player3Keys = 0;
@@ -31,6 +32,7 @@ public class DoorController : MonoBehaviour
 
         if (total_keys == 3 && !this.doorOpen)
         {
+            doorSoundEffect.Play();
             this.doorOpen = true;
             this.animator.SetBool("Keys", true);
         }
@@ -41,6 +43,10 @@ public class DoorController : MonoBehaviour
     {
         if (this.doorOpen)
         {
+            int val = PlayerPrefs.GetInt("levelAt");
+            Debug.Log(val);
+            PlayerPrefs.SetInt("levelAt", SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("after new: " +  val);
             SceneManager.LoadScene(sceneToLoad);
         }
     }

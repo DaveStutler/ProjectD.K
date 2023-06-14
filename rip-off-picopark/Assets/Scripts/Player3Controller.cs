@@ -6,6 +6,8 @@ using Player;
 public class Player3Controller : MonoBehaviour
 {
     [SerializeField] private GameObject respawnPoint;
+    [SerializeField] private AudioSource footSteps;
+    [SerializeField] private AudioSource deathSoundEffect;
     private IPlayerController right;
     private IPlayerController left;
     private IPlayerController jump;
@@ -36,12 +38,14 @@ public class Player3Controller : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Keypad6))
         {
+            footSteps.enabled = false;
             this.rightPressed = false;
             // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
         }
         if (Input.GetKeyUp(KeyCode.Keypad4))
         {
+            footSteps.enabled = false;
             this.leftPressed = false;
             // Want to stop horizontal movement.
             this.horizontalStop.Execute(this.gameObject);
@@ -64,11 +68,13 @@ public class Player3Controller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad6) || this.rightPressed)
         {
+            footSteps.enabled = true;
             this.right.Execute(this.gameObject);
             this.rightPressed = true;
         }
         if (Input.GetKeyDown(KeyCode.Keypad4) || this.leftPressed)
         {
+            footSteps.enabled = true;
             this.left.Execute(this.gameObject);
             this.leftPressed =true;
         }
@@ -91,6 +97,7 @@ public class Player3Controller : MonoBehaviour
 
         if (collision.gameObject.tag == "Death")
         {
+            deathSoundEffect.Play();
             var respawnPosition = this.respawnPoint.transform.position;
             this.gameObject.transform.position = respawnPosition;
         }
