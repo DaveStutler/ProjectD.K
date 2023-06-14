@@ -2,16 +2,13 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
 What will you do if your leader betrays you? As a local multiplayer 2-D puzzle platformer game, up to three players can work together (or not) to attempt to escape! Each pirate player has their own unique ability to escape danger and help each other succeed. Collect keys and treasure in order to escape each level and be one step closer to taking revenge and away from jail! 
 
 
 ## Gameplay Explanation ##
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
-
 Each player has their own unique skill:
-- Player 1: Press ‘W’, ‘A’, or ‘D’ keys for basic movement. Has a dash left or right when pressing ‘S’.
+- Player 1: Press ‘W’, ‘A’, or ‘D’ keys for basic movement. Has a dash left or right after pressing ‘S’.
 
 - Player 2: Press ‘I’, ‘J’, or ‘L’ keys for basic movement. Can grow and shrink in size when pressing ‘K’.
 
@@ -27,6 +24,8 @@ Puzzles have platforms that are created or walls that are destroyed to get to th
 
 
 **If you did work that should be factored into your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+
+Zahira Ghazali - Placing the assets into scenes (specifically Dungeon and Forest) and furnishing of the different scenes (so lighting, decorating, creation of prefabs etc.) and adapting the levels into the actual scene.
 
 
 # Main Roles #
