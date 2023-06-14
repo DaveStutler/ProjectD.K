@@ -82,8 +82,9 @@ public class PlaySceneManager : MonoBehaviour
     // Build index: 2
     public void goToJailEscape()
     {
-        clickSound.Play();
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        clickSound.Play();
     }
 
     // Change scene to Dungeon scene;
