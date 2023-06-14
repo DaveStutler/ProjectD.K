@@ -13,6 +13,7 @@ public class PlaySceneManager : MonoBehaviour
     [SerializeField] private GameObject lockForest;
     [SerializeField] private GameObject dungeonMask;
     [SerializeField] private GameObject forestMask;
+    [SerializeField] private AudioSource clickSound;
 
     // To change scene from Play to Selection screen.
     // Build index: 1
@@ -68,6 +69,7 @@ public class PlaySceneManager : MonoBehaviour
 
     public void goToSelectionScreen()
     {
+        clickSound.Play();
         PlayerPrefs.SetInt("levelAt", 2);
         levelAt = PlayerPrefs.GetInt("levelAt");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -80,6 +82,7 @@ public class PlaySceneManager : MonoBehaviour
     // Build index: 2
     public void goToJailEscape()
     {
+        clickSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -87,6 +90,7 @@ public class PlaySceneManager : MonoBehaviour
     // Build index: 3
     public void goToDungeon()
     {
+        clickSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
@@ -94,6 +98,7 @@ public class PlaySceneManager : MonoBehaviour
     // Build index: 4
     public void goToForest()
     {
+        clickSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
