@@ -138,18 +138,16 @@ Free Pixel Art Forest by edermunizz (itch.io)
 Super Pixel Objects Sample by unTied Games (itch.io)
 
 Going into designing, we want to make sure that visual in animation and environmental design provide clarity and support for players. Things, such as tile map and running animations, are intended to be clear so that players can execute actions onto their surrounding environment and affect other players as their intention desire. 
-For example, character animation is done through Unity animation Window. The selected assets provide unique animations for each character we implement. For each character, there is idle animation, running animation, and jumping animation. One thing to note is that the jumping animation includes jump anticipation, jumping, and landing. This is designed to bring a comedic aspect to the character movement. Unity animation is straightforward, with adding some sprite sheets and drawing connections between different animation blocks. The tutorial https://youtu.be/hkaysu1Z-N8 by Youtuber Brackeys help me animating all characters. 
+For example, character animation is done through Unity animation Window. The selected assets provide unique animations for each character we implement. For each character, there is idle animation, running animation, and jumping animation. One thing to note is that the jumping animation includes jump anticipation, jumping, and landing. This is designed to bring a comedic aspect to the character movement. Unity animation is straightforward, with adding some sprite sheets and drawing connections between different animation blocks. The [tutorial](https://youtu.be/hkaysu1Z-N8) by Youtuber Brackeys help me animating all characters. 
 An example of character animation is:
-https://github.com/DaveStutler/ProjectD.K/blob/b94b85f22f44a4a261d3edcfd3b34fc7262613ea/rip-off-picopark/Assets/Animation/Pirate%20Bomb/Sprites/5-Enemy-Captain/1-Idle/Player%203.controller
+[Player 3 Animation](https://github.com/DaveStutler/ProjectD.K/blob/b94b85f22f44a4a261d3edcfd3b34fc7262613ea/rip-off-picopark/Assets/Animation/Pirate%20Bomb/Sprites/5-Enemy-Captain/1-Idle/Player%203.controller)
 Building the world, on all 4 scenes, was difficult. Challenges such as establishing a theme for each scene while creating environmental puzzles tends to take times and details. Details such as background assets, like chain and candle, are unique to each scene and are necessary in establishing the desire situation the player is taking place. Luckily, Unity Tile Palette helps speeding through creating the overall layout of the scene. The Tile Palette window can be found in “Window -> 2D -> Tile Palette.” 
 There is not much a style guide in creating animations and scene layouts. A couple of YouTube tutorials are helpful in the process of understanding these tools: 
-https://youtu.be/hkaysu1Z-N8 (2D animation in Unity)
-https://youtu.be/ryISV_nH8qw (TILEMAPS in Unity)
+ [2D animation in Unity](https://youtu.be/hkaysu1Z-N8)
+[TILEMAPS in Unity](https://youtu.be/ryISV_nH8qw )
 
 ## Game Logic
 
-
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
 Kaylie Lam:
 I helped set up the main movement controls by using the Captain Controller Script from homework 1 as a basis for our own player controllers. I revised that code so that only the player movement of up, left, and right remains. I then copied those scripts into the rest of player 2 and 3 controller scripts so that they can then be individually key binded and given their abilities.
 
@@ -190,7 +188,7 @@ Additionally, the game includes challenges made specifically for `Player1` to pa
 
 ## Cross-Platform
 
-**Describe the platforms you targeted for your game release. For each, describe the process and unique actions taken for each platform. What obstacles did you overcome? What was easier than expected?**
+
 The primary platform that we targetted for our game release is that of PC thus there were no issues platforms wise. However, if given more time we would've liked to find a way to make the game truly multiplayer or at least use three different controllers as supposed to having different "regions" of the keyboard bound to each of the players. 
 
 ## Audio: Yingchen Gu
@@ -203,12 +201,8 @@ The primary platform that we targetted for our game release is that of PC thus t
 
 ## Gameplay Testing: Kaylie Lam
 
-**Add a link to the full results of your gameplay tests.**
-
 Link to each gameplay tests:
 https://docs.google.com/document/d/1D_9nhd4iOXguF67Z_IPUJWIznvpqB5S6Lz76Yq2A4hg/edit?usp=sharing
-
-**Summarize the key findings from your gameplay tests.**
 
 Most of the suggestions in round 1 consisted of gameplay design critiques to likely enhance player experience. There was a couple missing components such as the button not working through being bound to an object. The only real bugs found was the camera box issue.
 
@@ -216,7 +210,6 @@ Most of the suggestions in round 1 consisted of gameplay design critiques to lik
 
 ## Narrative Design: Zahira Ghazali
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 The plot revolves around three pirates - Scrappy, Biggs, and Cappy - who were arrested after their old captain used them as bait to run away from the most recent kingdom they had plundered. It's been a while since the three of them have been stuck in the jail but one extremely early - really Biggs it's too early - morning they are able to successfully make their escape from their jail cells and decide to make a getaway. Except the more they progress towards the edge of the island they find the place increasingly devoid of life. Marlow their old torturer is missing as are much of the guardsman, the forest is dark and eerie and silent like it shouldn't be. Something is wrong.
 
 With more time I would have liked to expand the story by adding interactable items acrosss all the levels and expanding into the fourth level where the pirates finally make their way to the edge of the island and are about to board a boat which would be the final stage of their "escape". If the players try to board the boat normally without interacting with anything the pirates find themselves in a dark void with nothing else around them and no idea where they are. This would be the so-called normal ending and the cliffhanger would mark the end of the game. Through the different interactions with objects scattered across the stages - encouraging the players to try "exploring" and find a reason behind the disappearances of people and creatures across the levels - the players would be able to get the "best ending" as supposed to the normal ending where they realize that something or someone is trying to literally "erase" them out of existence. Like a certain pirate captain that really should know better and probably knows that he'd better act quickly before they catch on. The last level would have been a timed trial with somewhat simpler puzzles in places but with a race against the clock in order to get this best ending. However due to time constraints the last level - level four - remains locked and we decided to put a cliffhanger on level three with level four marked as coming soon which will likely be expanded upon in the future. 
@@ -233,9 +226,6 @@ The story was written using the Cutscene1Controller.cs which outputted different
 
 ## Press Kit and Trailer: Huy Nguyen
 
-**Include links to your presskit materials and trailer.**
-
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 We highlight some animation, scenery design, character abilities as the main aspect of our game. Things such as running and jumping, ability to dash though the platform and size up, and the scene layouts are designed beautifully. We want to bring some comedic aspect to our trailer as well, which is why we include some popular culture references in our trailer such as the popular anime/manga series : Naruto Shippuden. 
 The music clip can be found here at this Youtube link:
 (59) Naruto - The Raising Fighting Spirit (Extended) - YouTube
@@ -244,8 +234,6 @@ The music video takes about 6 minutes, which is not appropriate for a game trail
 
 
 ## Game Feel: Yingyu Gu
-
-**Document what you added to and how you tweaked your game to improve its game feel.**
 
 To improve the game feel, I added lock/unlock mechanics to the level selection. This improves how the player interacts the game because each level has a different name and the first level must be `Jail Escaape` sinc this has the tutorial. By locking certain levels, the game becomes self explanatory to the player since they can only select certain levels as they progress. It also allow players to have a sense of accomplishment when they unlock newer, more difficult levels. 
 
