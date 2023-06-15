@@ -116,12 +116,25 @@ The scripts for the controller for the keys and the door can be seen below:
 [Door Controller](https://github.com/DaveStutler/ProjectD.K/blob/72f8f8cc7c37f263c1a2f9fa15e4fed9b022f066/rip-off-picopark/Assets/Scripts/DoorController.cs)
 
 ## Animation and Visuals: Huy Nguyen
+These are the assets that we have used to design our UI interfaces and game levels. They come with numerous sets of characters, animations, and tile sets, and pixel art layer designs: 
 
-**List your assets including their sources and licenses.**
+Pirate Bomb by Pixel Frog (itch.io)
+Kings and Pigs by Pixel Frog (itch.io)
+Treasure Hunters by Pixel Frog (itch.io)
+Items and Traps 16x16 pixel by BDragon1727 (itch.io)
+Overgrowth pt.1 by Ruuskii (itch.io)
+Oak Woods — Environment Asset 🍂 by brullov (itch.io)
+Free Pixel Art Forest by edermunizz (itch.io)
+Super Pixel Objects Sample by unTied Games (itch.io)
 
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
-
-
+Going into designing, we want to make sure that visual in animation and environmental design provide clarity and support for players. Things, such as tile map and running animations, are intended to be clear so that players can execute actions onto their surrounding environment and affect other players as their intention desire. 
+For example, character animation is done through Unity animation Window. The selected assets provide unique animations for each character we implement. For each character, there is idle animation, running animation, and jumping animation. One thing to note is that the jumping animation includes jump anticipation, jumping, and landing. This is designed to bring a comedic aspect to the character movement. Unity animation is straightforward, with adding some sprite sheets and drawing connections between different animation blocks. The tutorial https://youtu.be/hkaysu1Z-N8 by Youtuber Brackeys help me animating all characters. 
+An example of character animation is:
+https://github.com/DaveStutler/ProjectD.K/blob/b94b85f22f44a4a261d3edcfd3b34fc7262613ea/rip-off-picopark/Assets/Animation/Pirate%20Bomb/Sprites/5-Enemy-Captain/1-Idle/Player%203.controller
+Building the world, on all 4 scenes, was difficult. Challenges such as establishing a theme for each scene while creating environmental puzzles tends to take times and details. Details such as background assets, like chain and candle, are unique to each scene and are necessary in establishing the desire situation the player is taking place. Luckily, Unity Tile Palette helps speeding through creating the overall layout of the scene. The Tile Palette window can be found in “Window -> 2D -> Tile Palette.” 
+There is not much a style guide in creating animations and scene layouts. A couple of YouTube tutorials are helpful in the process of understanding these tools: 
+https://youtu.be/hkaysu1Z-N8 (2D animation in Unity)
+https://youtu.be/ryISV_nH8qw (TILEMAPS in Unity)
 
 ## Game Logic
 
@@ -213,6 +226,10 @@ The story was written using the Cutscene1Controller.cs which outputted different
 **Include links to your presskit materials and trailer.**
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+We highlight some animation, scenery design, character abilities as the main aspect of our game. Things such as running and jumping, ability to dash though the platform and size up, and the scene layouts are designed beautifully. We want to bring some comedic aspect to our trailer as well, which is why we include some popular culture references in our trailer such as the popular anime/manga series : Naruto Shippuden. 
+The music clip can be found here at this Youtube link:
+(59) Naruto - The Raising Fighting Spirit (Extended) - YouTube
+The music video takes about 6 minutes, which is not appropriate for a game trailer. So we decided to trim the music down 1 music, and included some of our best features in the game. As a result, the trailer can be found in the root directory of the git.
 
 
 
