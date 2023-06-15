@@ -152,6 +152,11 @@ Level 3, also known as the Island level, was focused around testing the players'
 
 Yingchen Gu:
 
+The main focus of our game logic is to create a game where users are able to cooperate with one another based on each of their unique abilities/skills to finish the levels. We heavily emphasized on collaboration by making sure that certain keys are placed in areas that only a specific player can get. For them to pass the level, they will have to work together to get each of the keys and reach the end. Additionally, we set the camera so that a player cannot simply ditch the other players. If 2 players are running in opposite directions, they wil reach a point where the camera will not move until they decided to move closer to each other. This feature is created to ensure that the players will work together rather than on their own.
+### Abilities
+The ability I worked on is the one used in `Player1Controller`, which is the dash movement. Player1 is able to dash when `s` is clicked. I wrote 2 separate scripts for the dash movement, one for dash right and another for dash left.
+### Platforms
+Additionally, the game includes challenges made specifically for `Player1` to pass, which is the wobbly bricks. I wrote a script that made it so that once a character passes a certain point in the map, the platform will disappear and come back within a few seconds. The platform we created was also longer than the normal platforms, making it so that only certain users can pass the challenge.
 
 
 
