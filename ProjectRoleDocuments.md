@@ -44,6 +44,11 @@ You should replay any **bold text** with your relevant information. Liberally us
 ## Producer
 
 **Describe the steps you took in your role as producer. Typical items include group scheduling mechanism, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, depedency/task tracking, Gantt charts, etc.), and repository management methodology.**
+Meetings were often placed every Saturday afternoon with some meetings scheduled after class; these were often organized using when2meet, through Discord, or even after class. Meeting also took place on Discord voice calls. Issues or to do lists were kept track of through Discord as seen below: 
+
+[Example To Do List](https://cdn.discordapp.com/attachments/762032638768054303/1118696605982404608/image.png)
+
+We tried to stick as close to the schedule dictated on the Gantt chart turned in with the proposal and chose to not include portions (ex. the extra level (Island), the interactable objects, etc.) as to make sure that we would be able to complete the game. 
 
 ## User Interface: Yingyu Gu
 
@@ -53,7 +58,7 @@ The user interface is an important part of our game because the scene with the p
 
 I designed the start menu and selection scene using the assets and tiles we added in order to make our game more interesting. In the start menu scene, there is a large PLAY button that will redirect the scene to a level select scene based on a script that I wrote. I added all the important scenes (start menu, selection scene, jail escape, dungeon, forest, a work in progress island scene, thank you scene, and a credit scene) to our build index so we can smoothly transition through all the necessary scene using Unity's `SceneManager`. ![alt text](https://cdn.discordapp.com/attachments/272048987295580171/1118682788820951050/image.png)
 
-In the selection scene, I created a backgorund using tilemaps and added 4 large boxes to hold the short gif of each of our level gameplay. In each of those boxes I made a video player that can play a gif of each of the game's level to show  players a short preview of how each level is like. ![Image of the selection screne](https://media.discordapp.net/attachments/272048987295580171/1118683497796747264/image.png?width=2161&height=1093) I also added a small volume button on the top right and wrote a script that allows players to choose whether they want the menu background music to keep playing or not. 
+In the selection scene, I created a background using tilemaps and added 4 large boxes to hold the short gif of each of our level gameplay. In each of those boxes I made a video player that can play a gif of each of the game's level to show  players a short preview of how each level is like. ![Image of the selection screne](https://media.discordapp.net/attachments/272048987295580171/1118683497796747264/image.png?width=2161&height=1093) I also added a small volume button on the top right and wrote a script that allows players to choose whether they want the menu background music to keep playing or not. 
 
 Furthermore, I wrote a script that will lock the levels that they player has not reached yet. The player will be able to unlock the next level (this will cause the level to be brighter and will remove the chain) once they complete the previous level. ![Here is an image of the second scene unlocked](https://media.discordapp.net/attachments/272048987295580171/1118685217117437982/image.png?width=2161&height=1097) 
 
