@@ -40,6 +40,16 @@ Here is an example:
 *Procedural Terrain* - The background of the game consists of procedurally-generated terrain that is produced with Perlin noise. This terrain can be modified by the game at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
+These are the assets that we have used to design our UI interfaces and game levels. They come with numerous sets of characters, animations, and tile sets, and pixel art layer designs: 
+
+[Pirate Bomb by Pixel Frog](https://pixelfrog-assets.itch.io/pirate-bomb)
+[Kings and Pigs by Pixel Frog](https://pixelfrog-assets.itch.io/kings-and-pigs)
+[Treasure Hunters by Pixel Frog](https://pixelfrog-assets.itch.io/treasure-hunters)
+[Items and Traps 16x16 pixel by BDragon1727](https://bdragon1727.itch.io/items-and-traps-16x16-pixel)
+[Overgrowth pt.1 by Ruuskii](https://ruuskii.itch.io/overgrowth-pt1)
+[Oak Woods — Environment Asset 🍂 by brullov](https://brullov.itch.io/oak-woods?download)
+[Free Pixel Art Forest by edermunizz](https://edermunizz.itch.io/free-pixel-art-forest)
+[Super Pixel Objects Sample by unTied Games](https://untiedgames.itch.io/super-pixel-objects-sample)
 
 ## Producer
 
