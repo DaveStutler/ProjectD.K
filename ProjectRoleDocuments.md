@@ -194,9 +194,31 @@ The primary platform that we targetted for our game release is that of PC thus t
 ## Audio: Yingchen Gu
 
 **List your assets including their sources and licenses.**
-
+### Music Sources
+A majority of the music we used for the background of our game was selected and chosen through YouTube videos and converted into MP3.
+* Menu Screen and Level Selection Screen Background Music
+   * Pirates of the Caribbean Theme Song: https://www.youtube.com/watch?v=yRh-dzrI4Z4
+* Level1: Jail Escape Background Music
+    * Sneaky Snitch: https://www.youtube.com/watch?v=I2m1h0ALpY4
+* Level2: Dungeon BG Music
+    * Pink Panther Theme Song: https://www.youtube.com/watch?v=VyZiIuMufTA
+* Level3: Forest BG Music 
+    * Dance of the Sugar Plum Fairy (Nutcracker): https://www.youtube.com/watch?v=RnQRQzTZjmo
+### SFX Sources
+* Footstep sounds: https://soundeffect-lab.info/sound/anime/
+    * I used the sfx caalled `スイッチを押す` for the footstep sounds of the players.
+* Click Sounds (in menu and selection screen): https://assetstore.unity.com/packages/audio/sound-fx/free-ui-click-sound-pack-244644
+    * Audio from: `liquid > SFX_UI_Click_Designed_Liquid_Negative_Close_1`
+* Door Unlock Sound: https://www.youtube.com/watch?v=hPjXwR8kFJg
+* Death Sound: https://www.youtube.com/watch?v=Y4ngIA1KuuI
+    * I cut a section of this video and used it as death sound
 **Describe the implementation of your audio system.**
-
+### Background Music
+The main background music of each of the levels and scenes are created by simply added am `Audio Source` that plays from `Awake`.
+### SFX
+The SFX for each different things: footstep, door, death, and button click was also done the same way but all of them don't start from `Awake`. Instead a line is added into the script of when I want the sound to play. 
+For `footsteps` specifically, I made it toggle `footstep.enable = true` rather than `door.Play()` so that it will continuously loop whne a player is moving. 
+For the other ones, I just used `<varname>.Play()` and created a `serializefield` with the audio source attached to it.
 **Document the sound style.** 
 
 ## Gameplay Testing: Kaylie Lam
